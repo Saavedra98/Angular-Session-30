@@ -1,0 +1,73 @@
+<div class="container d-flex">
+
+    <div class="registrar">
+        <div class="card">
+            <div class="card-header">
+                Registrar Usuarios
+            </div>
+            <div class="card-body">
+
+                <form [formGroup]="formulario" >
+                    <div class="mb-3">
+                        <label class="form-label">Nombre:</label>
+                        <input type="text" class="form-control" formControlName="nombreControl" >
+                    </div>
+    
+                    <div class="mb-3">
+                        <label  class="form-label">Apellidos</label>
+                        <input type="email" class="form-control" formControlName="apellidoControl">
+                    </div>
+                    <div class="mb-3">
+                        <label  class="form-label">Email:</label>
+                        <input type="email" class="form-control" formControlName="emailControl" >
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label  class="form-label">WebSite:</label>
+                        <input type="email" class="form-control" formControlName="websiteControl" >
+                    </div>
+                    <div class="mb-3">
+                        <button type="button" class=" boton btn btn-outline-primary d-flex mx-auto px-5" (click)="registrar()">Registrar</button>
+                    </div>
+
+                </form>
+
+                
+                
+            </div>
+        </div>
+    </div>
+
+    <div class="listas">
+        <div class="card">
+            <div class="card-header lista">
+                Usuarios:
+            </div>
+            <div class="card-body">
+                <table class="table">
+                    <thead>
+                      <tr class="text-center">
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Apellidos</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">WebSite</th>
+                        <th scope="col">Operacion</th>
+                      </tr>
+                    </thead>
+                    <tbody class="text-center">
+                      <tr *ngFor="let i of persona">
+                        <th>{{i.nombreControl}}</th>
+                        <td>{{i.apellidoControl}}</td>
+                        <td>{{i.emailControl}}</td>
+                        <td>{{i.websiteControl}}</td>
+                        <td><button type="button" class="eliminar btn btn-outline-danger d-flex mx-auto" (click)="onClickDelete(i)">Eliminar</button></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                
+            </div>
+        </div>
+    </div>
+
+
+</div>
